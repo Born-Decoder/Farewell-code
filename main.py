@@ -8,10 +8,10 @@ from os import startfile
 import os
 from tkinter import *
 file = pd.read_excel('values.xlsx')
-path1 = "C:\\Users\\manoj.prabhakaran\\Downloads\\and-fact.png"
-path2 = "C:\\Users\\manoj.prabhakaran\\Downloads\\lion-king.jpg"
-path3 = "C:\\Users\\manoj.prabhakaran\\Downloads\\shrawan.jpg"
-path4 = "C:\\Users\\manoj.prabhakaran\\Downloads\\chandra.mp4"
+path1 = "" #path of the third image to display
+path2 = "" #path of the second image to display
+path3 = "" #path of the first image to display
+path4 = "" #path of the video to play
 intro = ['Well','How are you Peeps?','Doing good?','I hope so.',
          'Yeah, you all know.','Do I need to say?','It has been a ride!',
          'and today is the time','we gotta say bye','to a guy.',
@@ -24,7 +24,7 @@ intro = ['Well','How are you Peeps?','Doing good?','I hope so.',
          'No worries, I will print it!','Here is a compilation',
          "of people's says", 'from what we have collected...',
          'of course there will be...', 'special talks', 'on the spot as well!',
-         'so let us start', 'yeah! Finally!', 'Hope you like it ;-)']
+         'so let us start', 'yeah! Finally!', 'Hope you like it ;-)'] #the Build-up at the start
 
 names = file["Name"].tolist()
 says = file["Say"].tolist()
@@ -115,7 +115,7 @@ class App(tk.Tk):
                 self.lbl2.configure(text="Let's hear what people say!")
             
             self.remaining = self.remaining - 1
-            self.after(100, self.countdown)
+            self.after(2000, self.countdown) #timer for intro (in ms)
 
 if __name__ == "__main__":
     app = App()
